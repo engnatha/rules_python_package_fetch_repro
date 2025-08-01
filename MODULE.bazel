@@ -1,0 +1,22 @@
+# rules_uv for generating lockfiles
+bazel_dep(name = "rules_uv", version = "0.85.0")
+
+
+# rules_python for running python code
+bazel_dep(name = "rules_python", version = "1.5.1")
+# Latest supported
+PYTHON_VERSION = "3.13.4"
+
+python = use_extension("@rules_python//python/extensions:python.bzl", "python")
+python.toolchain(
+    python_version = PYTHON_VERSION,
+)
+use_repo(python, "python_3_13_4")
+
+pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip")
+pip.parse(
+    hub_name = "pypi",
+    python_version = PYTHON_VERSION,
+    requirements_lock = "//:requirements_lock.txt",
+)
+use_repo(pip, "pypi")

@@ -1,0 +1,3 @@
+# Prevent bazel python execution from using `~/.local/lib`.
+build --action_env=PYTHONNOUSERSITE=1
+build --test_env=PYTHONNOUSERSITE=1
