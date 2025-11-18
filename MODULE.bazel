@@ -1,9 +1,9 @@
 # rules_uv for generating lockfiles
 bazel_dep(name = "rules_uv", version = "0.85.0")
 
-
 # rules_python for running python code
-bazel_dep(name = "rules_python", version = "1.5.1")
+bazel_dep(name = "rules_python", version = "1.7.0")
+
 # Latest supported
 PYTHON_VERSION = "3.13.4"
 

@@ -1,5 +1,15 @@
 # `rules_python` Package Index Reproduction
 
+# Update -- This is fixed in 1.7!
+
+The latest release for
+[1.7.0](https://github.com/bazel-contrib/rules_python/releases/tag/1.7.0) fixes 
+this issues since it pulls in
+[#3311](https://github.com/bazel-contrib/rules_python/pull/3311). The `bazel
+shutdown` behavior no longer affects running compiled binaries.
+
+# Original Reproduction Details
+
 There is an issue with `rules_python` where package metadata is fetched at bazel
 startup even for targets that should be reliably cached.
 
